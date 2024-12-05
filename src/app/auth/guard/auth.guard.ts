@@ -1,22 +1,31 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, Router, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
-import { AuthService } from '../auth/service/auth.service'; // Asegúrate de que AuthService esté importado
-
+import { AuthService } from '../service/auth.service';
+import Swal from 'sweetalert2';
 @Injectable({
   providedIn: 'root',
 })
 export class AuthGuard implements CanActivate {
   constructor(private authService: AuthService, private router: Router) {}
 
-  // Método para verificar si el usuario tiene acceso a la ruta
+
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): boolean {
     if (this.authService.isAuthenticated()) {
-      return true;  // Si el usuario está autenticado, se permite el acceso
+      return true;
     } else {
-      this.router.navigate(['/login']);  // Si no está autenticado, redirige al login
+      Swal.fire({
+        text: 'Debes iniciar sesión para acceder a esta página.',
+        icon: 'warning',
+        confirmButtonColor: '#EA535A',
+        color: '#17202a',
+        confirmButtonText: 'Ir a Login',
+      }).then(() => {
+
+        this.router.navigateByUrl('/login');
+      });
       return false;
     }
   }

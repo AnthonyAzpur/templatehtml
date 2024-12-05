@@ -1,5 +1,5 @@
   import { Routes } from '@angular/router';
-  import { AuthGuard } from './auth/auth.guard';
+  import { AuthGuard } from './auth/guard/auth.guard';
 
   export const routes: Routes = [
     {
@@ -7,15 +7,31 @@
       loadComponent: () => import('./auth/pages/login/login.component')
     },
     {
-      path: 'dashboard',
-      loadComponent: () => import('./home/dashboard/dashboard.component'),
+      path: 'home',
+      loadComponent: () => import('./home/home/home.component'),
       canActivate: [AuthGuard],
       children: [
         {
-          path: 'change-detection',
-          title: 'Change Detection',
+          path: 'menudash',
+          title: 'menudash',
           loadComponent: () => import('./components/menudash/menudash.component')
         },
+        {
+          path: 'navbar',
+          title: 'navbar',
+          loadComponent: () => import('./components/navbar/navbar.component')
+        },
+        {
+          path: 'main',
+          title: 'main',
+          loadComponent: () => import('./components/main/main.component')
+        },
+        {
+          path: 'footer',
+          title: 'footer',
+          loadComponent: () => import('./components/footer/footer.component')
+        },
+
       ]
 
     },
