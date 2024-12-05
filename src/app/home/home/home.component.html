@@ -1,17 +1,14 @@
 <div class="app-container app-theme-white body-tabs-shadow fixed-header fixed-sidebar">
+  <app-navbar class="  nav"></app-navbar>
 
-
-<app-navbar class="nav "></app-navbar>
-
-<div class="grid  grid-cols-5 grid-rows-5 gap-4">
-  <div class="row-span-5">
-    <app-menudash class="menu"></app-menudash>
+  <div class="grid grid-cols-5 grid-rows-5 gap-4">
+    <div class="row-span-5">
+      <app-menudash class="menu"></app-menudash>
+    </div>
+    <div class="col-span-4 row-span-5">
+      <app-main></app-main>
+    </div>
   </div>
-  <div class="col-span-4 row-span-5">
-    <app-main></app-main>
-  </div>
-</div>
 
-
-<app-footer></app-footer>
+  <app-footer></app-footer>
 </div>

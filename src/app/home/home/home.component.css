@@ -1,0 +1,63 @@
+/* Estilos para el contenedor principal */
+.app-container {
+  display: flex;
+  flex-direction: column; /* Organiza los elementos en una columna */
+  background-color: #ffffff; /* app-theme-white (fondo blanco) */
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  padding-top: 60px; /* Espacio para la barra de navegación fija */
+}
+
+/* Estilos para la barra de navegación fija */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;  /* Ocupa todo el ancho */
+  background-color: #333; /* Fondo oscuro */
+  color: white; /* Texto blanco */
+  z-index: 9999;  /* Asegura que la barra de navegación esté por encima de todos los demás elementos */
+  padding: 10px;   /* Relleno para la barra de navegación */
+  box-shadow: 4px 0 8px rgba(0, 0, 0, 0.6); /* Sombra más oscura */
+}
+
+
+/* Estilo para el layout de la grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);  /* 5 columnas de igual tamaño */
+  grid-template-rows: repeat(5, 1fr);     /* 5 filas de igual tamaño */
+  gap: 16px;  /* Espacio entre los elementos */
+  margin-top: 60px; /* Evita que el contenido quede tapado por la barra de navegación fija */
+}
+
+/* Estilo para los elementos de la grid */
+.row-span-5 {
+  grid-row: span 5;  /* Hace que el elemento ocupe 5 filas */
+}
+
+.col-span-4 {
+  grid-column: span 4;  /* Hace que el elemento ocupe 4 columnas */
+}
+
+/* Estilo para el menú lateral */
+.menu {
+  background-color: #f1f1f1;  /* Color de fondo para el menú */
+  padding: 20px;  /* Añadir un poco de espacio dentro del menú */
+}
+
+/* Estilo para el contenido principal */
+.app-main {
+  padding: 20px;  /* Añadir un poco de relleno */
+  background-color: #fff;  /* Color de fondo blanco */
+}
+
+/* Estilo para el pie de página */
+app-footer {
+  background-color: #f8f9fa; /* Fondo gris claro para el pie de página */
+  padding: 20px; /* Espacio interior */
+  text-align: center; /* Alineación centrada */
+  position: relative;
+  bottom: 0;
+}
